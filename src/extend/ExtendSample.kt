@@ -6,32 +6,47 @@ package extend
  * 缺点：不能覆盖原有的方法
  */
 fun main(args: Array<String>) {
-    A().setName("dog")
-    A().setName()
-    A().setAge(10)
+    val user = User()
+    user.setName("dog")
+    user.setName()
+    User().setAge(10)
+    User().setName("dog")
 
-    // 扩展相同方法（无效）
-    fun A.setName(name: String) {
-        println("extend name is $name")
-    }
-    A().setName("dog")
+    user.ageValue = 18
+    println(user.ageValue)
 }
 
-class A {
+class User {
+
+    // 属性也可进行扩展
+    var mValue = 0
 
     fun setName(name : String) {
-        println("name is $name");
+        println("name is $name")
     }
 }
 
 // 扩展新函数
-fun A.setAge(age : Int) {
+fun User.setAge(age : Int) {
     println("age is $age")
 }
 
 // 扩展同名函数
-fun A.setName() {
+fun User.setName() {
     println("name is extend")
 }
+
+// 扩展同步同参数（无效）
+fun User.setName(name: String) {
+    println("extend name is $name")
+}
+
+//扩展属性 添加一个ageValue 属性
+var User.ageValue: Int
+    get() = mValue
+    set(ageValue) {
+        mValue = ageValue
+    }
+
 
 
