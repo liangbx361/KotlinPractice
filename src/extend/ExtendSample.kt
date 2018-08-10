@@ -17,7 +17,6 @@ fun main(args: Array<String>) {
 }
 
 class User {
-
     // 属性也可进行扩展
     var mValue = 0
 
