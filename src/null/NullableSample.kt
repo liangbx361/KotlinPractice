@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
     }
 
     // 完整的非空判断
-    val l: Int = if (b != null) b.length else -1
+    val l: Int = b?.length ?: -1
     // 空值返回 -1
     val j: Int = b?.length ?: -1
 
