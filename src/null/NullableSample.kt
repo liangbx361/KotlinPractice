@@ -1,8 +1,8 @@
 package `null`
 
 /**
-* Created by liangbx on 2018/8/13.
-*/
+ * Created by liangbx on 2018/8/13.
+ */
 
 fun main(args: Array<String>) {
     // if not null 缩写
@@ -37,4 +37,8 @@ fun main(args: Array<String>) {
 
     // 使用!!操作符，强制抛出NPE
     val k = b!!.length
+
+    // 空指针
+    val nullStr: String? = null
+    System.out.println(nullStr?.isEmpty())
 }
